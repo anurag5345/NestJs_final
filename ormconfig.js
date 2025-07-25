@@ -28,12 +28,9 @@ switch (process.env.NODE_ENV) {
   case 'production':
     Object.assign(dbConfig, {
       type: 'sqlite',
-      url: process.env.DATABASE_URL,
+      database:'db.sqlite',
       entities: ['**/*.entity.js'],
       migrationsRun: true,
-      ssl: {
-        rejectUnauthorized: false,
-      },
     });
     break;
   default:
